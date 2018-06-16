@@ -7,13 +7,11 @@ import { Match } from './match';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  implements OnInit {
-  title = 'Bolão da Copa';
-
+export class AppComponent implements OnInit {
   showPreviousMatches: boolean;
   previousMatches: Match[];
 
-  constructor(private matchService: MatchService) {}
+  constructor(private matchService: MatchService) { }
 
   ngOnInit() {
     this.showPreviousMatches = false;

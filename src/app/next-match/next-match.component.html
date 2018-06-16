@@ -1,7 +1,7 @@
-<div class="row" style="background-color: darkseagreen; min-width: 580px;" *ngIf="nextMatch">
+<div class="row" style="background-color: darkseagreen;" *ngIf="nextMatch">
     <h1 class="col-sm-12">Próxima Partida</h1>
     <div class="col-sm-12" style="margin-top: 10px;">{{nextMatch.time}}</div>
-  
+
     <span class="col-sm-4"></span>
 
     <div class="col-sm-4 form-row">
@@ -12,9 +12,9 @@
         <h4 class="col-sm-12">Palpites</h4>
 
         <div class="col-sm-12 form-row" *ngFor="let user of users">
-            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.guesses1[user.id]">
-            <span class="col-sm-6">{{user.name}}</span>
-            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.guesses2[user.id]">
+            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.guesses1[user.id]">
+            <span class="col-sm-6 col-8">{{user.name}}</span>
+            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.guesses2[user.id]">
         </div>
 
         <div class="col-sm-12 form-row">
@@ -24,20 +24,19 @@
 
         <div class="col-sm-12 form-row" style="margin-top: 10px;">
             <h4 class="col-sm-12">Resultado</h4>
-            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.score1">
-            <span class="col-sm-6"></span>
-            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.score2">
+            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.score1">
+            <span class="col-sm-6 col-8"></span>
+            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.score2">
             <span class="col-sm-12" style="margin-top: 10px;"></span>
-            <button class="col-sm-12 btn btn-secondary" (click)="endMatch()" 
-                [disabled]="nextMatch.score1 === undefined || nextMatch.score1 === null
-                    || nextMatch.score2 === undefined || nextMatch.score2 === null ">Finalizar Partida</button>
+            <button class="col-sm-12 btn btn-secondary" (click)="endMatch()" [disabled]="nextMatch.score1 === undefined || nextMatch.score1 === null
+                    || nextMatch.score2 === undefined || nextMatch.score2 === null">Finalizar Partida</button>
         </div>
     </div>
 
     <span class="col-sm-4"></span>
 </div>
 
-<div class="row" style="background-color: darkseagreen; min-width: 580px;" *ngIf="!nextMatch">
+<div class="row" style="background-color: darkseagreen;" *ngIf="!nextMatch">
     <h1 class="col-sm-12">Qual será a próxima partida?</h1>
     <span class="col-sm-4"></span>
     <div class="col-sm-4 form-row">
@@ -51,7 +50,7 @@
             <option *ngFor="let country of countries" value="{{country.code}}">{{country.name}}</option>
         </select>
         <span class="col-sm-12" style="margin-top: 10px;"></span>
-        <button class="col-sm-12 btn btn-secondary" (click)="createMatch()">Criar</button>
+        <button class="col-sm-12 btn btn-secondary" (click)="createMatch()" [disabled]="!nextMatchToCreate.time || !nextMatchToCreate.countryCode1 || !nextMatchToCreate.countryCode2">Criar</button>
     </div>
     <span class="col-sm-4"></span>
 </div>
