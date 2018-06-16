@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+        "id": 1,
+        "name": "Vinicius",
+        "score": 1
+        },
+        {
+        "id": 2,
+        "name": "Lucas",
+        "score": 0
+        },
+        {
+        "id": 3,
+        "name": "Gabriel",
+        "score": 0
+        },
+        {
+        "id": 4,
+        "name": "Gustavo",
+        "score": 0
+        },
+        {
+        "id": 5,
+        "name": "Bete",
+        "score": 0
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+<div class="row" style="background: yellow;">
+  <h1 class="col-sm-12">Pontuação</h1>
+
+  <span class="col-sm-4"></span>
+  <table class="col-sm-4">
+    <th>Nome</th>
+    <th>Pontuação</th>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.score}}</td>
+    </tr>
+  </table>
+  <span class="col-sm-4"></span>
+</div>

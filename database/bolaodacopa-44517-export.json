@@ -1,0 +1,31 @@
+{
+  "matches" : {
+    "next" : {
+      "countryCode1" : "fra",
+      "countryCode2" : "aus",
+      "id" : 5,
+      "time" : "16/Jun 7:00"
+    }
+  },
+  "users" : [ {
+    "id" : 1,
+    "name" : "Vinicius",
+    "score" : 1
+  }, {
+    "id" : 2,
+    "name" : "Lucas",
+    "score" : 0
+  }, {
+    "id" : 3,
+    "name" : "Gabriel",
+    "score" : 0
+  }, {
+    "id" : 4,
+    "name" : "Gustavo",
+    "score" : 0
+  }, {
+    "id" : 5,
+    "name" : "Bete",
+    "score" : 0
+  } ]
+}

@@ -1,0 +1,57 @@
+<div class="row" style="background-color: darkseagreen; min-width: 580px;" *ngIf="nextMatch">
+    <h1 class="col-sm-12">Próxima Partida</h1>
+    <div class="col-sm-12" style="margin-top: 10px;">{{nextMatch.time}}</div>
+  
+    <span class="col-sm-4"></span>
+
+    <div class="col-sm-4 form-row">
+        <app-country [code]="nextMatch.countryCode1" class="col-sm-3"></app-country>
+        <span class="col-sm-6"></span>
+        <app-country [code]="nextMatch.countryCode2" class="col-sm-3"></app-country>
+
+        <h4 class="col-sm-12">Palpites</h4>
+
+        <div class="col-sm-12 form-row" *ngFor="let user of users">
+            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.guesses1[user.id]">
+            <span class="col-sm-6">{{user.name}}</span>
+            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.guesses2[user.id]">
+        </div>
+
+        <div class="col-sm-12 form-row">
+            <span class="col-sm-12" style="margin-top: 10px;"></span>
+            <button class="col-sm-12 btn btn-secondary" (click)="saveNextMatch()">Salvar Palpites</button>
+        </div>
+
+        <div class="col-sm-12 form-row" style="margin-top: 10px;">
+            <h4 class="col-sm-12">Resultado</h4>
+            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.score1">
+            <span class="col-sm-6"></span>
+            <input type="number" class="form-control col-sm-3" min="0" [(ngModel)]="nextMatch.score2">
+            <span class="col-sm-12" style="margin-top: 10px;"></span>
+            <button class="col-sm-12 btn btn-secondary" (click)="endMatch()" 
+                [disabled]="nextMatch.score1 === undefined || nextMatch.score1 === null
+                    || nextMatch.score2 === undefined || nextMatch.score2 === null ">Finalizar Partida</button>
+        </div>
+    </div>
+
+    <span class="col-sm-4"></span>
+</div>
+
+<div class="row" style="background-color: darkseagreen; min-width: 580px;" *ngIf="!nextMatch">
+    <h1 class="col-sm-12">Qual será a próxima partida?</h1>
+    <span class="col-sm-4"></span>
+    <div class="col-sm-4 form-row">
+        <input [(ngModel)]="nextMatchToCreate.time" class="col-sm-12 form-control" placeholder="Quando? (por ex: 06/Jun 11:00)">
+        <span class="col-sm-12" style="margin-top: 10px;"></span>
+        <select [(ngModel)]="nextMatchToCreate.countryCode1" class="form-control col-sm-5">
+            <option *ngFor="let country of countries" value="{{country.code}}">{{country.name}}</option>
+        </select>
+        <span class="col-sm-2">vs</span>
+        <select [(ngModel)]="nextMatchToCreate.countryCode2" class="form-control col-sm-5">
+            <option *ngFor="let country of countries" value="{{country.code}}">{{country.name}}</option>
+        </select>
+        <span class="col-sm-12" style="margin-top: 10px;"></span>
+        <button class="col-sm-12 btn btn-secondary" (click)="createMatch()">Criar</button>
+    </div>
+    <span class="col-sm-4"></span>
+</div>
