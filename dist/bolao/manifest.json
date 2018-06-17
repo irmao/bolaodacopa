@@ -1,7 +1,7 @@
 {
-  "name": "bolao",
-  "short_name": "bolao",
-  "theme_color": "#1976d2",
+  "name": "Bolão da Copa",
+  "short_name": "Bolão",
+  "theme_color": "#75d219",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
