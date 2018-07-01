@@ -17,7 +17,7 @@
     <div class="col-sm-12" style="background-color: cornflowerblue;">
       <h1 class="col-sm-12">Partidas Anteriores</h1>
 
-      <input type="checkbox" class="form-control" [(ngModel)]="showPreviousMatches" (change)="showPreviousMatchesChange()"> Mostrar?
+      <input type="checkbox" class="form-control" [(ngModel)]="showPreviousMatches" (change)="showPreviousMatchesChange()" aria-label="Show previous matches"> Mostrar?
 
       <div class="col-sm-12 row" *ngIf="showPreviousMatches">
         <div *ngFor="let match of previousMatches " class="col-sm-4">
