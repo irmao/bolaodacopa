@@ -8,7 +8,7 @@
       "updateMode": "prefetch",
       "urls": [
         "/index.html",
-        "/main.9cc71f5e4f76ada847fa.js",
+        "/main.5a5cf28f724f05bb9af4.js",
         "/polyfills.2f4a59095805af02bd79.js",
         "/runtime.a66f828dca56eeb90e02.js",
         "/styles.721040cb28d2b483af4d.css"
@@ -20,6 +20,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "/assets/arrow-left-8x.png",
         "/assets/cup_logo.png",
         "/assets/flags/arg",
         "/assets/flags/aus",
@@ -67,6 +68,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/assets/arrow-left-8x.png": "23b869408d8d9343eb3348787b15e24a731b7b55",
     "/assets/cup_logo.png": "945153cee1b7086c1d588d4c1ecde8cb217cbeb1",
     "/assets/flags/arg": "d5d417f2800c22ec565bc5d05fd894333ea214b9",
     "/assets/flags/aus": "eaf0c29c330b3c6a5e8a15c80753c9c51e20f4b2",
@@ -108,8 +110,8 @@
     "/assets/icons/icon-72x72.png": "a7edbd1f5874318fab1369fc75ec91fa19b18477",
     "/assets/icons/icon-96x96.png": "45e4a49c51fe9bd119d9e59ab4b34991a26c351a",
     "/assets/icons/icon-original.png": "00128f3dce45ce0916a1b139e5b159ef6d10e284",
-    "/index.html": "a709bfb30d445791ff1f23d3979356d8d8bf1290",
-    "/main.9cc71f5e4f76ada847fa.js": "71b4b5170298ee24b42196c0bf1506fa1806b32c",
+    "/index.html": "3a247d332fa7d039d787b23baa49950921135792",
+    "/main.5a5cf28f724f05bb9af4.js": "92cc659b02342f34456dec42ee6eb4f6c803ae31",
     "/polyfills.2f4a59095805af02bd79.js": "8949bb1b1e302dda246f6ed9c2da703270360b1f",
     "/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
     "/styles.721040cb28d2b483af4d.css": "4615a8372956c19d0afacd6d834c53ee783b73d1"
