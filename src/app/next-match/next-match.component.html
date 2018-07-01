@@ -24,9 +24,9 @@
 
         <div class="col-sm-12 form-row" style="margin-top: 10px;">
             <h4 class="col-sm-12">Resultado</h4>
-            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.score1">
+            <input aria-label="Team 1 actual score" type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.score1">
             <span class="col-sm-6 col-8"></span>
-            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.score2">
+            <input aria-label="Team 2 actual score" type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.score2">
             <span class="col-sm-12" style="margin-top: 10px;"></span>
             <button class="col-sm-12 btn btn-secondary" (click)="endMatch()" [disabled]="nextMatch.score1 === undefined || nextMatch.score1 === null
                     || nextMatch.score2 === undefined || nextMatch.score2 === null">Finalizar Partida</button>
