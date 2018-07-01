@@ -42,7 +42,7 @@
     <div class="col-sm-4 form-row" style="display: flex; align-items: center;">
         <input [(ngModel)]="nextMatchToCreate.time" class="col-sm-7 col-7 form-control" placeholder="Quando? (por ex: 06/Jun 11:00)"
             aria-label="Game time input">
-        <img class="col-sm-1 col-1" src="assets/arrow-left-8x.png" alt="Left arrow icon" style="height: 1rem; width: 1rem;">
+        <img class="col-sm-1 col-1" src="assets/arrow-left-8x.png" alt="Left arrow icon">
         <button class="btn btn-secondary col-sm-4 col-4" (click)="transferNextGuessedTime()">{{guessNextMatchTime()}}</button>
         <span class="col-sm-12" style="margin-top: 10px;"></span>
         <select [(ngModel)]="nextMatchToCreate.countryCode1" class="form-control col-sm-5" aria-label="Select Team 1">
