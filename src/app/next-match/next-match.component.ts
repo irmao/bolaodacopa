@@ -1,5 +1,5 @@
-import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { MatchService } from '../match.service';
 import { UserService } from '../user.service';
 import { User } from '../user';
@@ -20,12 +20,12 @@ export class NextMatchComponent implements OnInit {
   users: User[];
 
   constructor(private matchService: MatchService, private userService: UserService,
-    private countryService: CountryService) { }
+    private countryService: CountryService, private datePipe: DatePipe) { }
 
   ngOnInit() {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
-    
+
       this.matchService.getNextMatch().subscribe(match => {
         this.nextMatch = match;
 
@@ -55,11 +55,11 @@ export class NextMatchComponent implements OnInit {
     let winnerUsers: string[] = [];
 
     this.users.forEach(u => {
-      if (this.nextMatch.score1 === this.nextMatch.guesses1[u.id] 
+      if (this.nextMatch.score1 === this.nextMatch.guesses1[u.id]
         && this.nextMatch.score2 === this.nextMatch.guesses2[u.id]) {
-          this.userService.setScore(u.id, this.users[u.id].score + 1);
-          winnerUsers.push(u.name);
-        }
+        this.userService.setScore(u.id, this.users[u.id].score + 1);
+        winnerUsers.push(u.name);
+      }
     });
 
     if (winnerUsers.length > 0) {
@@ -74,5 +74,27 @@ export class NextMatchComponent implements OnInit {
   createMatch() {
     this.matchService.saveNextMatch(this.nextMatchToCreate);
     this.nextMatchToCreate = new Match();
+  }
+
+  guessNextMatchTime() {
+    const date = new Date();
+
+    if (date.getHours() < 11) {
+      date.setHours(11);
+    } else if (date.getHours() < 15) {
+      date.setHours(15);
+    } else {
+      date.setDate(date.getDate() + 1);
+      date.setHours(11);
+    }
+
+    date.setMinutes(0);
+    date.setSeconds(0);
+
+    return this.datePipe.transform(date, 'dd/LL HH:mm');
+  }
+
+  transferNextGuessedTime() {
+    this.nextMatchToCreate.time = this.guessNextMatchTime();
   }
 }

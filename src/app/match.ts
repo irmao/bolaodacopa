@@ -9,4 +9,5 @@ export class Match {
     guesses1: number[];
     guesses2: number[];
     winGuesser: string;
+    time: string;
 }
