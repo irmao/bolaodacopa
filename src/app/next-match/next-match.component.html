@@ -12,9 +12,9 @@
         <h4 class="col-sm-12">Palpites</h4>
 
         <div class="col-sm-12 form-row" *ngFor="let user of users">
-            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.guesses1[user.id]">
+            <input type="number" attr.aria-label="Team 1 input for {{user.name}}" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.guesses1[user.id]">
             <span class="col-sm-6 col-8">{{user.name}}</span>
-            <input type="number" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.guesses2[user.id]">
+            <input type="number" attr.aria-label="Team 2 input for {{user.name}}" class="form-control col-sm-3 col-2" min="0" [(ngModel)]="nextMatch.guesses2[user.id]">
         </div>
 
         <div class="col-sm-12 form-row">
